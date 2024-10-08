@@ -1,0 +1,17 @@
+valor_da_divida = float(input("Digite o valor da dívida: "))
+
+
+print("| Dívida| Juros| Quantidade de Parcelas| Valor da Parcela|")
+print("=" * 60)
+
+
+for parcelas in range(1, 13, 3):
+    
+    juros = 2 * parcelas + 5 if parcelas > 1 else 0
+    valor_do_juros = valor_da_divida * (juros / 100)
+    valor_total = valor_da_divida + valor_do_juros
+    valor_da_parcela = valor_total / parcelas
+
+    
+    print(
+        f"| R$ {valor_total:.2f}| R$ {valor_do_juros:.2f}| {parcelas}| R$ {valor_da_parcela:.2f}|" )
