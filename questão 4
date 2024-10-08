@@ -1,0 +1,10 @@
+apais = 80000
+bpais = 200000
+numAnos = 0
+
+while apais < bpais:
+    apais *= 1.03  
+    bpais *= 1.015  
+    numAnos += 1
+
+print(f'O país A passará o país B em {numAnos} anos.')
