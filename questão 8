@@ -1,0 +1,35 @@
+gabarito = ['A', 'C', 'B', 'D', 'A', 'C', 'B', 'A', 'D', 'C']
+
+total_alunos = 0
+maior_acerto = 0
+menor_acerto = float('inf')
+soma_notas = 0
+
+while True:
+    total_alunos += 1
+    acertos = 0
+
+    for i in range(10):
+        resposta = input(f"Digite sua resposta para a questão {i + 1} (A, B, C ou D): ").upper()
+        
+        while resposta not in ['A', 'B', 'C', 'D']:
+            print("Resposta inválida. Por favor, digite A, B, C ou D.")
+            resposta = input(f"Digite sua resposta para a questão {i + 1} (A, B, C ou D): ").upper()
+
+        if resposta == gabarito[i]:
+            acertos += 1
+
+    soma_notas += acertos
+    maior_acerto = max(maior_acerto, acertos)
+    menor_acerto = min(menor_acerto, acertos)
+
+    print(f"Você acertou {acertos} questões e sua nota é {acertos}.")
+
+    if input("Outro aluno vai utilizar o sistema? (sim/nao): ").lower() != 'sim':
+        break
+
+print("\nResultados finais:")
+print(f"Total de alunos: {total_alunos}")
+print(f"Maior acerto: {maior_acerto}")
+print(f"Menor acerto: {menor_acerto if menor_acerto != float('inf') else 0}")
+print(f"Média das notas: {soma_notas / total_alunos:.2f}")
