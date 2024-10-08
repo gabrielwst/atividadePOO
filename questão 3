@@ -1,0 +1,12 @@
+nu = int(input('Digite um número: '))
+total = 0
+for i in range(1, nu + 1):
+    if nu % i == 0:
+        total += 1
+    
+    print('{}'.format(i), end='')
+    print('O número {} foi divisilvel {} vezes'.format(nu,total))
+    if total == 2:
+        print('O número é primo')
+    else:
+        print('O número não é primo')
